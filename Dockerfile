@@ -4,8 +4,8 @@ RUN set -x \
 && apk add --no-cache openssh \
 && sed 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' -i /etc/ssh/sshd_config \
 && echo 'root:P@ssw0rd' | chpasswd \
-&& ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa \
-&& ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa \
+&& ssh-keygen  -N '' -t rsa \
+&& ssh-keygen  -N '' -t dsa \
 && mkdir -p /var/run/sshd
 
 EXPOSE 22
