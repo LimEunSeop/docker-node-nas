@@ -1,6 +1,7 @@
 FROM node:lts-alpine
 
 RUN set -x \
+&& npm i -g pm2 \
 && apk add --no-cache openssh \
 && sed 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' -i /etc/ssh/sshd_config \
 && sed 's/#HostKey \/etc\/ssh\/ssh_host_rsa_key/HostKey \/etc\/ssh\/ssh_host_rsa_key/' -i /etc/ssh/sshd_config \
