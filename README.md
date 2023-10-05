@@ -40,7 +40,7 @@ networks:
     name: proxy-network
 ```
 
-What you should notice is:
+What you should note is:
 
 1. You should use root user so that SSH acceess from client, which can be Jenkins, is done easily.
 2. `/root/.ssh` volume should be mounted so that `authorized_keys` file from the server is not lost.
