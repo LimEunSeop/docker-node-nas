@@ -22,7 +22,10 @@ jobs:
         env:
           NAME: dmstjq12 # 계정 명
           REPO: docker-node-nas # 레포 이름
+          VERSION: 0.1.0
         run: |
           docker build -t $REPO .
+          docker tag $REPO:latest $NAME/$REPO:$VERSION
           docker tag $REPO:latest $NAME/$REPO:latest
+          docker push $NAME/$REPO:$VERSION
           docker push $NAME/$REPO:latest

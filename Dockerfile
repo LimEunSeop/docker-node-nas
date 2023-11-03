@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:20.9-alpine
 
 RUN set -x \
 && npm i -g pm2 \
