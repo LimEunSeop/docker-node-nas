@@ -1,4 +1,6 @@
-FROM node:20.9-alpine
+ARG VERSION
+
+FROM node:$VERSION
 
 RUN set -x \
 && npm i -g pm2 \
